@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header?.classList.toggle("abajo",window.scrollY>0);
+		})
+   }
 
   ngOnInit(): void {
   }
