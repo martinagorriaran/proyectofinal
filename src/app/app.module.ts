@@ -11,6 +11,9 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { Comp4Component } from './components/comp4/comp4.component';
 import { Comp5Component } from './components/comp5/comp5.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -30,7 +33,8 @@ import { Comp5Component } from './components/comp5/comp5.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

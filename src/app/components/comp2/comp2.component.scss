@@ -140,18 +140,20 @@ body {
 				.banner-inner-wrapper {
 					height: 100%;
 					padding-top: 6em;
-					background-image: linear-gradient(rgba(243,129,129,.9), rgba(252,227,138,.9));
+					background-image: linear-gradient(rgba(53, 55, 55, .3), rgba(234, 232, 227,.3));
 					box-sizing: border-box;
 					h2 {
 						padding-bottom: 0.3em;
-						font-family: $h3-font;
+						font-family: 'LemonJelly';
 						font-weight: 400;
-						font-size: 2.5em;
+						font-size: 4.5em;
 						text-transform: none;
 					}
 					h1 {
 						font-size: 6em;
 						line-height: 95%;
+						font-family:'Koulen', cursive ;
+						color: white;
 					}
 					.line {
 							display: block;
@@ -180,9 +182,9 @@ body {
 					}
 				}
 			}
-			#top-banner-1 {background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-1.png') no-repeat center center; background-size: cover;}
-			#top-banner-2 {background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-2.png') no-repeat center center; background-size: cover;}
-			#top-banner-3 {background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-3.png') no-repeat center center; background-size: cover;}
+			#top-banner-1 {background: url('https://gurmeteando.info/download/multimedia.grande.be95dc08a20439bf.6b7572756620315f6772616e64652e4a5047.JPG') no-repeat center center; background-size: cover;}
+			#top-banner-2 {background: url('https://viajoconvos.com.ar/wp-content/uploads/2019/09/50984092_2281622328788787_3036204671799656448_n-01.jpeg') no-repeat center center; background-size: cover;}
+			#top-banner-3 {background: url('https://gurmeteando.info/download/multimedia.normal.9b6e9d4e9b5153e9.6b7572756620345f6e6f726d616c2e4a5047.JPG') no-repeat center center; background-size: cover;}
 			#top-banner-4 {background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-4.png') no-repeat center center; background-size: cover;}
 		}
 		nav {
@@ -209,7 +211,7 @@ body {
 					text-transform: uppercase;
 					font-family: $main-font;
 					font-size: 1em;
-					color: #f6eac5;
+					color: white;
 					font-weight: 400;
 					cursor: pointer;
 					transition: all  3s;
@@ -219,14 +221,14 @@ body {
 						left: 0;
 						height: 3px;
 						width: 100%;
-						background: #f6eac5;
+						background: white;
 						z-index: 100;
 						.progressbar-fill {
 							position: inherit;
 							width: inherit;
 							height: inherit;
 							margin-left: -100%;
-							background: #e88382;
+							background: black;
 						}
 					}
 					span {
