@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  // const nav = document.querySelector('nav');
 
-  // function () {
-  //   if (window.pageYOffset > 100) {
-  //     nav.classList.add('bg-dark', 'shadow');
-  //   } else {
-  //     nav.classList.remove('bg-dark', 'shadow');
-  //   }
-  // };
-
-  constructor() {
+  constructor(private servicioMenus: MenuService) {
 
   }
 

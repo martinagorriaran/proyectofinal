@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Menu } from '../interfaces/menu';
 import { map } from 'rxjs/operators';
@@ -7,6 +7,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MenuService {
+
+  
+
 
   private collectionMenu:AngularFirestoreCollection<Menu>
 

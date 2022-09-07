@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Menu } from 'src/app/interfaces/menu';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-comp3',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Comp3Component implements OnInit {
 
-  constructor() { }
+  @Input() entrada:Menu[]
+
+  constructor(private servicioMenus:MenuService) { }
 
   ngOnInit(): void {
   }
