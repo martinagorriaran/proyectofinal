@@ -17,6 +17,8 @@ import { environment } from 'src/environments/environment';
 import { Comp6Component } from './components/comp6/comp6.component';
 import { Comp7Component } from './components/comp7/comp7.component';
 import { Comp8Component } from './components/comp8/comp8.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -34,6 +36,8 @@ import { Comp8Component } from './components/comp8/comp8.component';
     Comp6Component,
     Comp7Component,
     Comp8Component,
+    AdminComponent,
+    LoginComponent,
     
   ],
   imports: [
