@@ -19,10 +19,10 @@ export class LoginComponent implements OnInit {
 
   ingresar(){
     console.log(this.form);
-    const usuario = this.form.value.usuario;
+    const username = this.form.value.username;
     const password = this.form.value.password;
 
-    if(usuario == 'gmartina' && password == 'admin123' ){
+    if(username == 'gmartina' && password == 'admin123' ){
       //Redireccionamos a dashboard
       this.fakeLoading();
     }else{
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     setTimeout(()=>{
 
       //Redireccionamos al dashboard
-      this.router.navigate(['dashboard'])
+      this.router.navigate(['home'])
     },1500)
   }
 

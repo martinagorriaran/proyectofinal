@@ -1,27 +1,34 @@
-<p>login works!</p>
-<div class="body">
+
+<div class="body" style="background-color: grey;">
     <div class="login">
         
         
+        
 
-        <form  *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
+        <div class="margin">
+            <form  *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
 
-            <img src="../../../assets/img/programmer.png" alt="">
-            <h1>Login</h1>
-            <div class="input-group mb-3">
+                <h1 style="text-align: center;" class="myfont">Login</h1>
+                <div class="input-group mb-3">
+                    
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
                 
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3">
-            
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-            <br>
-            <button type="submit" mat-raised-button color="primary" class="ancho" [disabled]="form.invalid">Ingresar</button>
+                    <input type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <br>
+                <div class="boton">
+                    <button [disabled]="form.invalid" type="button" class="btn btn-primary ">Primary</button>
+                </div>
+                
+    
+            </form>
+        </div>
 
-        </form>
+        
 
 
     </div>
 
-</div>
+</div> 
