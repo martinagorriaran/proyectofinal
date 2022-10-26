@@ -1,12 +1,9 @@
 
 <div class="body" style="background-color: grey;">
     <div class="login">
-        
-        
-        
-
+          
         <div class="margin">
-            <form  >
+            <form [formGroup]="form" (ngSubmit)="ingresar()" >
 
                 <h1 style="text-align: center;" class="myfont">Login</h1>
 
@@ -20,15 +17,11 @@
                 </div>
                 <br>
                 <div class="boton">
-                    <button  type="button" class="btn btn-primary" (click)="iniciaSesion()">Primary</button>
+                    <button  type="button" class="btn btn-primary" (click)="ingresar()">Primary</button>
                 </div>
                 
-    
             </form>
         </div>
-
-        
-
 
     </div>
 
