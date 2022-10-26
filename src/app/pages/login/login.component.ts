@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { timeout } from 'rxjs';
+import { Usuarios } from 'src/app/interfaces/usuarios';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,38 +13,24 @@ import { timeout } from 'rxjs';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
+
+  colUsuarios:Usuarios[] = []
+
+  datosUsuarios = new FormGroup(
+    {
+      username: new FormControl('',Validators.required),
+      password: new FormControl('',Validators.required)
+    }
+  )
   
-  constructor( private fb: FormBuilder,  private router: Router ) { }
+  constructor( private servicioUsuarios:LoginService ) { }
 
   ngOnInit(): void {
   }
 
-  ingresar(){
-    console.log(this.form);
-    const username = this.form.value.username;
-    const password = this.form.value.password;
-
-    if(username == 'gmartina' && password == 'admin123' ){
-      //Redireccionamos a dashboard
-      this.fakeLoading();
-    }else{
-      //Redireccionamos un mensaje de error
-      this.error();
-      this.form.reset();
-    }
-  }
-
-  error(){
-    alert('Usuario o contraseña ingresado son invalidos')
-  }
-
-  fakeLoading(){
-    this.loading = true;
-    setTimeout(()=>{
-
-      //Redireccionamos al dashboard
-      this.router.navigate(['home'])
-    },1500)
+  
+  iniciaSesion(){
+    this.servicioUsuarios.login(this.datosUsuarios,this.colUsuarios)
   }
 
 }
