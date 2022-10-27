@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { AdminModule } from './pages/admin/admin.module'
+
 import { AppComponent } from './app.component';
 
 import { Comp2Component } from './components/comp2/comp2.component';
@@ -41,6 +44,7 @@ import { LoginComponent } from './pages/login/login.component';
     
   ],
   imports: [
+    AdminModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

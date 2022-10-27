@@ -20,6 +20,9 @@ import { SolicitarinfComponent } from './solicitarinf/solicitarinf.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    MenuComponent
   ]
 })
 export class AdminModule { }
