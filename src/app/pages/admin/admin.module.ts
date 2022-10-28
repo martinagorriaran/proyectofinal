@@ -6,7 +6,7 @@ import { InfomacionComponent } from './infomacion/infomacion.component';
 import { BannerfycComponent } from './bannerfyc/bannerfyc.component';
 import { BannerinfComponent } from './bannerinf/bannerinf.component';
 import { SolicitarinfComponent } from './solicitarinf/solicitarinf.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { SolicitarinfComponent } from './solicitarinf/solicitarinf.component';
     SolicitarinfComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule 
   ],
   exports: [
     MenuComponent
