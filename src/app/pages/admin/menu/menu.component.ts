@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
 
   textoBoton:string;
 
-  eliminarVisible:boolean = false
+  eliminarVisible:boolean = true
 
   constructor(private servicioMenus:MenuService,private servicioStorage:StorageService) { }
 
@@ -93,8 +93,20 @@ export class MenuComponent implements OnInit {
   }
 
   mostrarEliminar(menu:Menu){
-    this.eliminarVisible = true
+    this.eliminarVisible = false
     this.menuSeleccionado = menu
+  }
+
+  eliminarMenu(){
+    this.servicioMenus.deleteMenu(this.menuSeleccionado.idMenu)
+    .then((resp)=>{
+      this.servicioStorage.eliminarImagen(this.menuSeleccionado.img)
+      alert("El menu fue elimnado con éxito")
+    })
+    .catch((err)=>{
+      alert("No se pudo eliminar el menu\nError: "+err)
+    })
+    this.eliminarVisible = false
   }
 
   mostrarEditar(menuSeleccionado:Menu){

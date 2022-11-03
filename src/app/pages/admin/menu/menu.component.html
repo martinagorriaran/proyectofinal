@@ -17,22 +17,43 @@
     <div style="display: flex; justify-content:center">
 
     <button  id="botonAgregarForm" class="btn btn-primary" (click)="mostrarEditar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;"><i class="fa-solid fa-pen"></i></button>
-    <button  id="botonAgregarForm" class="btn btn-primary" (click)="mostrarEliminar(menu)" style="border-radius: 50%;width: 50px; height: 50px; background-color: black;"><i class="fa-solid fa-trash"></i></button>
     
-    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="mostrarEliminar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
+        <i class="fa-solid fa-trash"></i>
+    </button>
 
-    </div>
 </div>  
 
-<!-- Button trigger modal -->
+
+  
+<!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          
+        </div>
+        <div class="modal-body">
+          <p>¿Desea eliminar el menu?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="eliminarMenu()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Button trigger modal Formulario-->
 <div style="display: flex; justify-content:center">
     <button type="button" class="btn btn-primary" (click)="mostrarDialogo()" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: black;">
         Añadir Producto
     </button>
 </div>
 
-  
-<!-- Modal -->
+<!-- Modal Formulario -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
     <div class="modal-content">
@@ -54,34 +75,22 @@
                     <input type="password" class="form-control" formControlName="descripcion" id="exampleInputPassword1">
                 </div>
                 <div class="mb-3 form-check">
-                    <label for="exampleInputPassword1" class="form-label">Imagen</label>
                     <input type="password" class="form-control" formControlName="img" id="exampleInputPassword1">
+                    <button  id="botonAgregarForm" class="p-button-success" (click)="cargarMenu()">{{textoBoton}}</button>
                 </div>
 
-                <button  id="botonAgregarForm" class="p-button-success" (click)="cargarMenu()">{{textoBoton}}</button>
-                  
             </form>
         </div>
 
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="agregarMenu()">Guardar Cambios</button>
+        <button type="button" class="btn btn-primary" (click)="actualizarMenu()">Editar</button>
+        <button type="button" class="btn btn-primary" (click)="agregarMenu()">Actualizar</button>
         </div>
     
     
 </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog">
-        <div class="modal-content">
-    
-            <div class="modal-footer">
-                <p>¿Deseas eliminar este Producto?</p>
-           
-            <button type="button" class="btn btn-primary" (click)="agregarMenu()" (click)="eliminarVisible=false">Eliminar Visible</button>
-            </div>
-        
-    </div>
-</div>
+
+
