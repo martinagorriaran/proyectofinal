@@ -21,7 +21,7 @@ export class StorageService {
 
     async subirImagen(nombre:string, imagen:any){
       try{
-        let referenciaImagen = ref(this.storage,'productos/'+nombre)
+        let referenciaImagen = ref(this.storage,'menus/'+nombre)
         this.respuesta = await uploadString(referenciaImagen,imagen,'data_url')
         .then(resp=>{
           return resp

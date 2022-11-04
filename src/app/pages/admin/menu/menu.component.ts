@@ -90,6 +90,7 @@ export class MenuComponent implements OnInit {
     .catch((error)=>{
       alert("No se pudo actualizar el menu\nError: "+error)
     })
+    
   }
 
   mostrarEliminar(menu:Menu){
@@ -137,6 +138,23 @@ export class MenuComponent implements OnInit {
     this.nuevoMenu.reset()
     this.modalVisible = false
   }
+
+  cargarImagen(event:any){
+    let archivo = event.target.files[0];
+    let reader = new FileReader();
+    if(archivo!=undefined){
+        reader.readAsDataURL(archivo)
+        reader.onloadend = () => {
+         let url = reader.result
+          if(url!=null){
+            this.nombreImagen = archivo.name
+            this.imagen = url.toString()
+          }
+        }
+      }
+   }
+
+   
 
 
 }

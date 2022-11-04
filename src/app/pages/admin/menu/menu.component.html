@@ -3,11 +3,14 @@
 <h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px;" class="pt-5 pb-5" id="menu" >MENU</h1>
 
 <div class="row">
+
     <div class="col" *ngFor="let menu of entrada">
         <div class="card" style="width: 18rem;" >
             
         <img [src]="menu.img" class="card-img-top" alt="...">
+
         <div class="card-body">
+            
             <h5 class="card-title text-center">{{menu.comida}}</h5>
             <p class="card-text text-center">{{menu.descripcion}}</p>
             
@@ -22,6 +25,8 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="mostrarEliminar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
         <i class="fa-solid fa-trash"></i>
     </button>
+
+   
 
 </div>  
 
@@ -49,7 +54,7 @@
 <!-- Button trigger modal Formulario-->
 <div style="display: flex; justify-content:center">
     <button type="button" class="btn btn-primary" (click)="mostrarDialogo()" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: black;">
-        Añadir Producto
+        Agregar Menu
     </button>
 </div>
 
@@ -65,6 +70,10 @@
 
         <div class="modal-body">
             <form [formGroup]="nuevoMenu">
+
+                <img [src]="imagen" alt="aun no hay imagen" id="previsualizacion">
+
+                
         
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Comida</label>
@@ -74,15 +83,15 @@
                     <label for="exampleInputPassword1" class="form-label">Descripcion</label>
                     <input type="password" class="form-control" formControlName="descripcion" id="exampleInputPassword1">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="password" class="form-control" formControlName="img" id="exampleInputPassword1">
-                    <button  id="botonAgregarForm" class="p-button-success" (click)="cargarMenu()">{{textoBoton}}</button>
-                </div>
+
+                <input id="float-input" type="file" class="p-float-label" pInputText accept=".jpg, .png, .gif" (change)="cargarImagen($event)" formControlName="img">
 
             </form>
         </div>
 
         <div class="modal-footer">
+        
+
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" (click)="actualizarMenu()">Editar</button>
         <button type="button" class="btn btn-primary" (click)="agregarMenu()">Actualizar</button>
