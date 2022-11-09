@@ -11,6 +11,9 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  
+
   form = new FormGroup({
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
@@ -35,6 +38,7 @@ export class LoginComponent implements OnInit {
       //Redireccionamos a dashboard
       alert('Usuario o contraseña ingresado son validos');
       this.fakeLoading();
+      
     }else{
       //Redireccionamos un mensaje de error
       this.error();
@@ -55,6 +59,8 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('admin')
     },1500)
   }
+
+  
 
   
 
