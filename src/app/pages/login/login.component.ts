@@ -14,50 +14,26 @@ export class LoginComponent implements OnInit {
 
   
 
-  form = new FormGroup({
+  datosUsuarios = new FormGroup({
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
   })
-  loading = false;
 
+  // loading = false;
 
-  constructor( private fb: FormBuilder, private router: Router ) {
+  colUsuarios:Usuarios[] = []
+
+  constructor( private fb: FormBuilder, private router: Router, private servicioUsuarios:LoginService ) {
   }
 
   ngOnInit(): void {
+    this.servicioUsuarios.getUsuarios().subscribe(
+      usuarios => this.colUsuarios = usuarios
+    )
   }
 
-  
-
-  ingresar(){
-    console.log(this.form);
-    const username = this.form.value.username;
-    const password = this.form.value.password;
-
-    if(username == 'gmartina' && password == 'admin123' ){
-      //Redireccionamos a dashboard
-      alert('Usuario o contraseña ingresado son validos');
-      this.fakeLoading();
-      
-    }else{
-      //Redireccionamos un mensaje de error
-      this.error();
-      this.form.reset();
-    }
-  }
-
- 
-  error(){
-    alert('Usuario o contraseña ingresado son invalidos')
-      
-  }
-
-  fakeLoading(){
-    this.loading = true;
-    setTimeout(()=>{
-      //Redireccionamos al admin
-      this.router.navigateByUrl('admin')
-    },1500)
+  iniciaSesion(){
+    this.servicioUsuarios.login(this.datosUsuarios,this.colUsuarios)
   }
 
   

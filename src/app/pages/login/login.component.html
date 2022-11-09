@@ -3,7 +3,7 @@
     <div class="login">
           
         <div class="margin">
-            <form [formGroup]="form" (ngSubmit)="ingresar()" >
+            <form [formGroup]="datosUsuarios"  >
 
                 <h1 style="text-align: center;" class="myfont">Login</h1>
 
@@ -17,7 +17,7 @@
                 </div>
                 <br>
                 <div class="boton">
-                    <button  type="button" class="btn btn-primary" (click)="ingresar()">Primary</button>
+                    <button  type="button" class="btn btn-primary" (click)="iniciaSesion()">Primary</button>
                 </div>
                 
             </form>

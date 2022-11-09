@@ -23,6 +23,8 @@ import { Comp8Component } from './components/comp8/comp8.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import { CookieService } from 'ngx-cookie-service';
+
 
 
 @NgModule({
@@ -50,7 +52,7 @@ import { LoginComponent } from './pages/login/login.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
