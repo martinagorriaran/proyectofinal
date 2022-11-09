@@ -19,6 +19,7 @@ export class LoginService {
 
   constructor(private db:AngularFirestore, private router: Router, private cookieService: CookieService) { 
     this.coleccionUsuarios = this.db.collection("usuarios");
+    
     this.cookieService.set('Test','Hello Word');
     this.cookieValue= this.cookieService.get('Test');
   }
