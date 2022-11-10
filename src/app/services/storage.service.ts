@@ -5,8 +5,8 @@ import {deleteObject, getDownloadURL, getStorage, ref, UploadResult, uploadStrin
 })
 export class StorageService {
 
+  //declaracion de variables
   private respuesta:UploadResult
-
   private storage = getStorage()
 
   constructor() { }

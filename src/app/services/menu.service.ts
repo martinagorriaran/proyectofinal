@@ -7,17 +7,18 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MenuService {
-
+  //declaracion de variables
   private collectionMenu:AngularFirestoreCollection<Menu>
 
   constructor(private db:AngularFirestore) {
     this.collectionMenu = db.collection('menu')
   }
 
+  //obtenemos el menu
   getMenu(){
     return this.collectionMenu.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data())))
   }
-
+  //metodo para crear menus
   createMenu(nuevoMenu:Menu,url:string){
     return new Promise(async (resolve,reject)=>{
       try{
@@ -32,11 +33,11 @@ export class MenuService {
         }
     })
   }
-
+  //metodo para editar menus
   editarMenu(idMenu:string,nuevosDatos:Menu){
     return this.collectionMenu.doc(idMenu).update(nuevosDatos)
   }
-
+  //metodo para eliminar menus
   deleteMenu(idMenu:string){
     return new Promise((resolve,reject)=>{
       try{

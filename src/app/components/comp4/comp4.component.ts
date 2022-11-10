@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Mensaje } from 'src/app/interfaces/mensaje';
@@ -10,11 +11,11 @@ import { MensajeService } from 'src/app/services/mensaje.service';
 })
 export class Comp4Component implements OnInit {
 
-  
-
   constructor(private servicioMensajes:MensajeService) { }
 
+  //metodo que guarda los datos del formulario
   nuevoMensaje = new FormGroup({
+    //validators requierd define que todos los campos son obligatorios
     nombre:new FormControl('',Validators.required),
     apellido:new FormControl('',Validators.required),
     mensaje:new FormControl('',Validators.required),
@@ -22,7 +23,7 @@ export class Comp4Component implements OnInit {
     telefono:new FormControl('',Validators.required),
   })
 
-  
+  //metodo para enviar mensaje
   agregarMensaje(){
     if(this.nuevoMensaje.valid){
       let nuevoMensaje:Mensaje = {
@@ -45,12 +46,8 @@ export class Comp4Component implements OnInit {
       })
     }
 
-   
-
-    
   }
   
-
   ngOnInit(): void {
   }
 
