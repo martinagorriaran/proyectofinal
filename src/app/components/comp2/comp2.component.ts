@@ -10,8 +10,6 @@ declare var $: any;
 })
 export class Comp2Component implements OnInit {
 
-  
-
   constructor() {
 
     window.addEventListener("next", function bannerSwitcher (){

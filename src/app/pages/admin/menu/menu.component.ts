@@ -13,25 +13,23 @@ export class MenuComponent implements OnInit {
 
   @Input() entrada:Menu[]
 
-  /*Declaracion de variables */
+  /*declaracion de variables*/
   menuSeleccionado:Menu;
   menus: Menu[]
   imagen:string;
   modalVisible:boolean=false;
   textoBoton:string;
   eliminarVisible:boolean = true
+  nombreImagen:string
 
-  /*Inyecto en el constructor*/
+  /*inyecto en el constructor los servicios*/
   constructor(private servicioMenus:MenuService,private servicioStorage:StorageService) { }
 
   ngOnInit(): void {
-
     this.servicioMenus.getMenu().subscribe(menu=>{
       this.menus = menu
     })
   }
-
-  nombreImagen:string
 
   nuevoMenu = new FormGroup({
     comida: new FormControl('',Validators.required),
@@ -40,13 +38,13 @@ export class MenuComponent implements OnInit {
   })
 
 
-  /*Metodo para añadir un nuevo menu*/
+  /*metodo para añadir un nuevo menu*/
   async agregarMenu(){
 
-    /*Si nuevo menu es valido */
+    /*si nuevo menu es valido */
     if(this.nuevoMenu.valid){
 
-      /*Guardar datos menu */
+      /*guardar datos menu */
       let nuevoMenu:Menu = {
         comida: this.nuevoMenu.value.comida!,
         descripcion: this.nuevoMenu.value.descripcion!,
@@ -54,22 +52,22 @@ export class MenuComponent implements OnInit {
         idMenu: "",
       }
       
-      /**/
+      /*usamos el metodo subir imagen y servicio storage para enviar sus parametros*/
       this.servicioStorage.subirImagen(this.nombreImagen,this.imagen)
-
       .then(
         async res=>{
+          /*luego obtemos la url de la imagen del servicio storage*/
           this.servicioStorage.obtenerUrlImagen(res).
           then(
             async url=>{
-              /*Espero a que se cree el nuevo menu*/
+              /*espero a que se cree el nuevo menu*/
               await this.servicioMenus.createMenu(nuevoMenu,url)
               .then(menu=>{
-                /*Aviso el si menu fue agragado con exito*/
+                /*aviso el si menu fue agragado con exito*/
                 alert("Menu agregado con exito")
               })
               .catch(error=>{
-                /*Aviso si ocurrio un error*/
+                /*aviso si ocurrio un error*/
                 alert("Ocurrió un error\nError: "+error)
               })
             }
@@ -79,15 +77,13 @@ export class MenuComponent implements OnInit {
 
     }
 
-    /*Si no aviso que hay campos vacios*/
+    /*si no aviso que hay campos vacios*/
     else{
     alert("Hay campos vacíos")
     }
   }
 
   actualizarMenu(){
-
-    /*G*/
     let nuevoMenu:Menu = {
       comida: this.nuevoMenu.value.comida!,
       descripcion: this.nuevoMenu.value.descripcion!,
@@ -121,7 +117,7 @@ export class MenuComponent implements OnInit {
     })
     this.eliminarVisible = false
   }
-
+  /*metodo mostrar editar*/
   mostrarEditar(menuSeleccionado:Menu){
     this.menuSeleccionado = menuSeleccionado
     this.imagen = this.menuSeleccionado.img
@@ -130,6 +126,7 @@ export class MenuComponent implements OnInit {
       descripcion: menuSeleccionado.descripcion,
       img: menuSeleccionado.descripcion
     })
+
     this.textoBoton = "Editar Producto"
     this.modalVisible = true
   }
@@ -140,10 +137,13 @@ export class MenuComponent implements OnInit {
     this.modalVisible=true;
   }
 
+  /*metodo cargar menu*/
   cargarMenu(){
+    /*si el texto boton es agregar menu usamos el metodo correspondiente*/
     if(this.textoBoton === "Agregar Menu"){
       this.agregarMenu()
     }
+    /*si el texto boton es editar menu usamos el metodo correspondiente*/
     else if(this.textoBoton === "Editar Menu"){
       this.actualizarMenu()
     }
@@ -151,7 +151,7 @@ export class MenuComponent implements OnInit {
     this.modalVisible = false
   }
   
-  /*Metodo Cargar Imagen*/
+  /*metodo cargar imagen*/
   cargarImagen(event:any){
     let archivo = event.target.files[0];
     let reader = new FileReader();

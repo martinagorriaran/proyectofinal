@@ -8,6 +8,7 @@ import { Carrousel } from '../interfaces/carrousel';
 })
 export class CarrouselService {
 
+  //declaracion de variables
   private collectionCarrousels:AngularFirestoreCollection<Carrousel>;
 
   constructor(private db:AngularFirestore) { 

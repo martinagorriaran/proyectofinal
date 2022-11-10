@@ -66,7 +66,7 @@ body {
 	background: #f38181;
 }
 
-/* Estilos Principales del Encabezado */
+/* estilos principales del encabezado */
 .main-header {
 	position: absolute;
 	top: 0;
@@ -110,7 +110,7 @@ body {
 	}
 }
 
-/* Estilos Seccion 1 */
+/* estilos seccion 1 */
 #section-1 {
 	height: 38em;
 	color: $main-color;
@@ -182,7 +182,7 @@ body {
 					}
 				}
 			}
-			/*Imagenes de los Banners*/
+			/*imagenes de los banners*/
 			#top-banner-1 {background: url('https://gurmeteando.info/download/multimedia.grande.be95dc08a20439bf.6b7572756620315f6772616e64652e4a5047.JPG') no-repeat center center; background-size: cover;}
 			#top-banner-2 {background: url('https://viajoconvos.com.ar/wp-content/uploads/2019/09/50984092_2281622328788787_3036204671799656448_n-01.jpeg') no-repeat center center; background-size: cover;}
 			#top-banner-3 {background: url('https://gurmeteando.info/download/multimedia.normal.9b6e9d4e9b5153e9.6b7572756620345f6e6f726d616c2e4a5047.JPG') no-repeat center center; background-size: cover;}
@@ -270,13 +270,13 @@ body {
 	}
 }
 
-/* Animaciones */
+/* animaciones */
 @keyframes progressBarFill {
 	from {margin-left: -100%;}
 	to {margin-left: 0;}
 }
 
-/* Media Queries */
+/* media Queries */
 @media only screen and (min-width: 1920px) {
 	body {font-size: 22px;}
 	.main-header .header-wrapper {width: 57%;}

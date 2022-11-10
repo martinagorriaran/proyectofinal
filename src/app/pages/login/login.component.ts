@@ -12,14 +12,10 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  
-
   datosUsuarios = new FormGroup({
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
   })
-
-  // loading = false;
 
   colUsuarios:Usuarios[] = []
 
@@ -35,12 +31,5 @@ export class LoginComponent implements OnInit {
   iniciaSesion(){
     this.servicioUsuarios.login(this.datosUsuarios,this.colUsuarios)
   }
-
-  
-
-  
-
-  
- 
 
 }

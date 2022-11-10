@@ -1,59 +1,52 @@
+<!--titulo-->
 <h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px;" class="pt-5 pb-5" >SOLICITA MAS INFORMACION</h1>
 
-    <div class="container">
-
-      <div>
-
-        <form [formGroup]="nuevoMensaje">
-          <div class="row">
-
-            <div class="col">
-              <label for="exampleFormControlInput1" class="form-label" >Nombre</label>
-              <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="nombre">
-            </div>
-            <div class="col">
-              <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-              <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="apellido">
-            </div>
-
-          </div>
-
-          <div class="row">
-
-            <div class="col">
-              <label for="exampleFormControlInput1" class="form-label">Email</label>
-              <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="email">
-            </div>
-            <div class="col">
-              <label for="exampleFormControlInput1" class="form-label">Telefono</label>
-              <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="telefono">
-            </div>
-
-          </div>
-
-          <div class="row">
-            <label for="Select" class="form-label">Disabled select menu</label>
-            <select style="border-radius:0 ;"  id="Select" class="form-select">
-              <option>Foodtruck</option>
-              <option>Evento</option>
-              <option>Otro</option>
-
-            </select>
-          </div>
-
-          <div class="row">
-            <label for="exampleFormControlTextarea1" class="form-label">mensaje</label>
-            <textarea style="border-radius:0 ;"  class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="mensaje"></textarea>
-          </div>
-        </form>
-
-        <div  class="btn-holder"> 
-          <button  type="button" cclass="btn btn-5 hover-border-11" (click)="agregarMensaje() ">
-            <span>Enviar</span>
-          </button>
+<div class="container">
+  <div>
+    <!--formulario-->
+    <form [formGroup]="nuevoMensaje">
+      <!--fila nombre apellido-->
+      <div class="row">
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label" >Nombre</label>
+          <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="nombre">
         </div>
-
-
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+          <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="apellido">
+        </div>
       </div>
-  
+      <!--fila email telefono-->
+      <div class="row">
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="email">
+        </div>
+        <div class="col">
+          <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+          <input type="email" class="form-control" style="border-radius:0 ;" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="telefono">
+        </div>
+      </div>
+      <!--fila tipo mensaje-->
+      <div class="row">
+        <label for="Select" class="form-label">Disabled select menu</label>
+        <select style="border-radius:0 ;"  id="Select" class="form-select">
+          <option>Foodtruck</option>
+          <option>Evento</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <!--fila mensaje-->
+      <div class="row">
+        <label for="exampleFormControlTextarea1" class="form-label">mensaje</label>
+        <textarea style="border-radius:0 ;"  class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="mensaje"></textarea>
+      </div>
+    </form>
+    <!--boton-->
+    <div  class="btn-holder"> 
+      <button  type="button" cclass="btn btn-5 hover-border-11" (click)="agregarMensaje() ">
+        <span>Enviar</span>
+      </button>
     </div>
+  </div>
+</div>

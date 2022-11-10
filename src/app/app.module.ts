@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { AdminModule } from './pages/admin/admin.module'
-
 import { AppComponent } from './app.component';
-
 import { Comp2Component } from './components/comp2/comp2.component';
 import { Comp3Component } from './components/comp3/comp3.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -22,15 +18,12 @@ import { Comp7Component } from './components/comp7/comp7.component';
 import { Comp8Component } from './components/comp8/comp8.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LoginComponent } from './pages/login/login.component';
-
 import { CookieService } from 'ngx-cookie-service';
-
-
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
     Comp2Component,
     Comp3Component,
     HomeComponent,
@@ -43,7 +36,6 @@ import { CookieService } from 'ngx-cookie-service';
     Comp8Component,
     AdminComponent,
     LoginComponent,
-    
   ],
   imports: [
     AdminModule,
@@ -51,6 +43,7 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

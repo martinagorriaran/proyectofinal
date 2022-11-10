@@ -1,9 +1,8 @@
 
 <div>
-
+    <!--titulo-->
     <h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px;" class="pt-5 pb-5" id="menu" >MENU</h1>
-    
-    <!-- Boton Agregar Menu-->
+    <!-- boton agregar menu-->
     <div style="display: flex; justify-content:center">
         <button type="button" class="btn btn-primary" (click)="mostrarDialogo()" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: black;">
             Agregar Menu
@@ -11,28 +10,25 @@
     </div>
 
     <div class="row">
-    
         <div class="col" *ngFor="let menu of entrada">
             <div class="card" style="width: 18rem;" >
-                
+            <!--imagen menu-->
             <img [src]="menu.img" class="card-img-top" alt="...">
-    
+            <!--items menu-->
             <div class="card-body">
-                
                 <h5 class="card-title text-center">{{menu.comida}}</h5>
                 <p class="card-text text-center">{{menu.descripcion}}</p>
-                
             </div>
         </div>
     
         <div style="display: flex; justify-content:center">
     
-        <!-- Boton Editar -->
+        <!-- boton editar -->
         <button  id="botonAgregarForm" class="btn btn-primary" (click)="mostrarEditar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
             <i class="fa-solid fa-pen"></i>
         </button>
         
-        <!-- Boton Eliminar -->
+        <!-- boton eliminar -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="mostrarEliminar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
             <i class="fa-solid fa-trash"></i>
         </button>
@@ -41,16 +37,15 @@
 
 </div>
 
-<!-- Modal Eliminar-->
+<!-- modal eliminar-->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-          
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>   
         </div>
         <div class="modal-body">
-          <p>¿Desea eliminar el menuu?</p>
+          <p>¿Desea eliminar el menu?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -60,23 +55,19 @@
     </div>
 </div>
 
-<!-- Modal Añadir/Editar -->
+<!--modal añadir/editar -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Comida</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
             <div class="modal-body">
+                <!---fomulario añadir/editar menu-->
                 <form [formGroup]="nuevoMenu">
-
                     <img [src]="imagen" alt="aun no hay imagen" id="previsualizacion">
 
-                    
-            
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Comida</label>
                         <input type="email" class="form-control" formControlName="comida" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -87,18 +78,14 @@
                     </div>
 
                     <input id="float-input" type="file" class="p-float-label" pInputText accept=".jpg, .png, .gif" (change)="cargarImagen($event)" formControlName="img">
-
                 </form>
             </div>
-
+        <!--botones-->
         <div class="modal-footer">
-        
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" (click)="actualizarMenu()">Editar</button>
             <button type="button" class="btn btn-primary" (click)="agregarMenu()">Actualizar</button>
-        
         </div>
-        
     </div>
 </div>
 

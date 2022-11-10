@@ -11,6 +11,7 @@ import { MensajeService } from 'src/app/services/mensaje.service';
 })
 export class Comp4Component implements OnInit {
 
+  //inyecto los servicios en el constructor
   constructor(private servicioMensajes:MensajeService) { }
 
   //metodo que guarda los datos del formulario
@@ -27,14 +28,12 @@ export class Comp4Component implements OnInit {
   agregarMensaje(){
     if(this.nuevoMensaje.valid){
       let nuevoMensaje:Mensaje = {
-
         nombre : this.nuevoMensaje.value.nombre!,
         apellido : this.nuevoMensaje.value.apellido!,
         email : this.nuevoMensaje.value.email!,
         mensaje : this.nuevoMensaje.value.mensaje!,
         telefono : this.nuevoMensaje.value.telefono!,
         idMensaje : ""
-        
       }
   
       this.servicioMensajes.createMensaje(nuevoMensaje).then(mensaje=>{
@@ -45,7 +44,6 @@ export class Comp4Component implements OnInit {
         alert("Ocurrio un error\nError: "+error)
       })
     }
-
   }
   
   ngOnInit(): void {
