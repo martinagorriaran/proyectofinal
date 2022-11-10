@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
   nombreImagen:string
 
   /*inyecto en el constructor los servicios*/
-  constructor(private servicioMenus:MenuService,private servicioStorage:StorageService) { }
+  constructor(private servicioMenus:MenuService,private servicioStorage:StorageService){ }
 
   ngOnInit(): void {
     this.servicioMenus.getMenu().subscribe(menu=>{
@@ -106,6 +106,7 @@ export class MenuComponent implements OnInit {
     this.menuSeleccionado = menu
   }
 
+  /*metodo eliminar menu*/
   eliminarMenu(){
     this.servicioMenus.deleteMenu(this.menuSeleccionado.idMenu)
     .then((resp)=>{
@@ -117,6 +118,7 @@ export class MenuComponent implements OnInit {
     })
     this.eliminarVisible = false
   }
+
   /*metodo mostrar editar*/
   mostrarEditar(menuSeleccionado:Menu){
     this.menuSeleccionado = menuSeleccionado
@@ -131,6 +133,7 @@ export class MenuComponent implements OnInit {
     this.modalVisible = true
   }
 
+  /*metodo mostrar dialogo*/
   mostrarDialogo(){
     this.imagen = ""
     this.textoBoton = "Agregar Menu"
@@ -153,21 +156,20 @@ export class MenuComponent implements OnInit {
   
   /*metodo cargar imagen*/
   cargarImagen(event:any){
-    let archivo = event.target.files[0];
-    let reader = new FileReader();
-    if(archivo!=undefined){
-        reader.readAsDataURL(archivo)
-        reader.onloadend = () => {
-         let url = reader.result
-          if(url!=null){
-            this.nombreImagen = archivo.name
-            this.imagen = url.toString()
-          }
+    
+  let archivo = event.target.files[0];
+  let reader = new FileReader();
+
+  if(archivo!=undefined){
+      reader.readAsDataURL(archivo)
+      reader.onloadend = () => {
+        let url = reader.result
+        if(url!=null){
+          this.nombreImagen = archivo.name
+          this.imagen = url.toString()
         }
       }
-   }
-
-   
-
+    }
+  }
 
 }
