@@ -9,12 +9,11 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class HomeComponent implements OnInit {
 
+  //declaracion de variables
   menus:Menu[] = []
 
-
-  constructor(private servicioMenus: MenuService) {
-
-  }
+  //inyectamos los servicios en el constructor
+  constructor(private servicioMenus: MenuService) {}
 
   ngOnInit(): void {
     this.servicioMenus.getMenu().subscribe((menu)=>{

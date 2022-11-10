@@ -12,13 +12,10 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  datosUsuarios = new FormGroup({
-    username: new FormControl('',Validators.required),
-    password: new FormControl('',Validators.required)
-  })
-
+  //declaracion de variables
   colUsuarios:Usuarios[] = []
 
+  //inyectamos los servicios en el constructor
   constructor( private fb: FormBuilder, private router: Router, private servicioUsuarios:LoginService ) {
   }
 
@@ -27,6 +24,11 @@ export class LoginComponent implements OnInit {
       usuarios => this.colUsuarios = usuarios
     )
   }
+
+  datosUsuarios = new FormGroup({
+    username: new FormControl('',Validators.required),
+    password: new FormControl('',Validators.required)
+  })
 
   iniciaSesion(){
     this.servicioUsuarios.login(this.datosUsuarios,this.colUsuarios)
