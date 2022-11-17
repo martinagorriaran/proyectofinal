@@ -1,3 +1,9 @@
+$main-font: Montserrat, sans-serif;
+$content-font: Roboto, sans-serif;
+$h3-font: 'Kaushan Script', cursive;
+$main-color: #fff;
+$icon-color: #95e1d3;
+
 .banner-image {
     background-image: url('https://gurmeteando.info/download/multimedia.grande.9d659305b4240e5f.6b7572756620355f6772616e64652e4a5047.JPG');
    
@@ -5,4 +11,22 @@
 .banner-image-first {
     background-image: url('https://gurmeteando.info/download/multimedia.grande.8aeeaab65bf18473.6b7572756620325f6772616e64652e6a7067.jpg');
    
+}
+.learn-more-button {
+    padding-bottom: 5em;
+    z-index: 15 !important;
+    a {
+        padding: 0.5em 2em;
+        text-align: center;
+        font-family: $main-font;
+        font-size: 0.875em;
+        color: $main-color;
+        text-transform: uppercase;
+        border: 0.1875em solid $main-color;
+        &:hover {
+            color: #e88382;
+            border-color: #e88382;
+            transition: 3s;
+        }
+    }
 }

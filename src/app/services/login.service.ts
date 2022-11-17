@@ -40,7 +40,12 @@ export class LoginService {
     }
   }
 
+
+  //metodo que se llama cuando esta logueado el usuario
   estaLogueado(){
     return this.isLoged
   }
+
+ 
+  
 }
