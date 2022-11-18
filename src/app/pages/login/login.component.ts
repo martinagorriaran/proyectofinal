@@ -14,24 +14,54 @@ export class LoginComponent implements OnInit {
 
   //declaracion de variables
   colUsuarios:Usuarios[] = []
+  logueado = false
 
   //inyectamos los servicios en el constructor
-  constructor( private fb: FormBuilder, private router: Router, private servicioUsuarios:LoginService ) {
-  }
+  constructor( 
+    private fb: FormBuilder,
+    private router: Router,
+    private login:LoginService,
+    private servicioUsuarios:LoginService, 
+    private google:LoginService
+  ){}
 
   ngOnInit(): void {
+    this.logueado = this.login.estaLogueado()
+    this.google.getUser()
+
+    /*
     this.servicioUsuarios.getUsuarios().subscribe(
       usuarios => this.colUsuarios = usuarios
-    )
+    )*/
   }
+
+  
 
   datosUsuarios = new FormGroup({
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
   })
-
+  
   iniciaSesion(){
     this.servicioUsuarios.login(this.datosUsuarios,this.colUsuarios)
   }
+  CerrarSesion(){
+    this.login.logOut()
+    this.router.navigateByUrl("/")
+    this.ngOnInit()
+  }
+
+
+
+
+  iniciarSesionConGoogle(){
+    this.google.loginWithGoogle()
+  }
+
+  cerrarSesionConGoogle(){
+    this.google.logOut()
+  }
 
 }
+
+

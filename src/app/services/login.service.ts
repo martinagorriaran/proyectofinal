@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { async } from '@firebase/util';
 import { CookieService } from 'ngx-cookie-service';
 import { map } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Usuarios } from '../interfaces/usuarios';
+import firebase from 'firebase/compat/app';
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +18,50 @@ export class LoginService {
   private isLoged = false
   private coleccionUsuarios: AngularFirestoreCollection<Usuarios>
   cookieValue: string;
-
-  constructor(private db:AngularFirestore, private router: Router, private cookieService: CookieService) { 
-
-    this.coleccionUsuarios = this.db.collection("usuarios");
   
-    this.cookieService.set('cookie',this.isLoged.toString());
-    this.cookieValue= this.cookieService.get('cookie');
+  constructor(private db:AngularFirestore, private router: Router, private cookie: CookieService, private auth:AngularFireAuth) { 
   }
+ 
+  async loginWithGoogle(){
+    let referenceProvider = new firebase.auth.GoogleAuthProvider();
+    await this.auth.signInWithPopup(referenceProvider);
+    this.auth.authState.subscribe(
+      async user=>{
+        await user?.getIdToken()
+        .then(
+          token=>{
+            this.cookie.set("idToken",token)
+            this.router.navigateByUrl('/admin')
+          }
+        )
+        .catch(
+          error=>{
+            console.error("Ocurrió un error: ",error)
+          }
+        )
+      }
+    )
+  }
+
+  getUser(){
+    this.auth.authState.subscribe(
+      async user=>{
+        let token = await user?.getIdToken()
+        console.log(token)
+      }
+    )
+  }
+
+  logOut(){
+    this.auth.signOut().then(
+      ()=>{
+        this.cookie.delete("idToken");
+      }
+    )
+  }
+
+
+
 
   //metodo para obtener usuarios
   getUsuarios(){
