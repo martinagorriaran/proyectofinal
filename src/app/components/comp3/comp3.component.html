@@ -1,16 +1,19 @@
 <!--titulo-->
 <h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px;" class="pt-5 pb-5" id="menu" >MENU</h1>
 
-<div class="row">
+<div class="row px-5" >
     <!--menus-->
-    <div class="col" *ngFor="let menu of entrada">
-        <div class="card" style="width: 18rem;" >
-            <!--items de los menus-->
-            <img [src]="menu.img" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title text-center">{{menu.comida}}</h5>
-                <p class="card-text text-center">{{menu.descripcion}}</p>
+    
+        <div class="col" *ngFor="let menu of entrada">
+            <div class="card" style="width: 18rem;" >
+                <!--items de los menus-->
+                <img [src]="menu.img" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{menu.comida}}</h5>
+                    <p class="card-text text-center">{{menu.descripcion}}</p>
+                </div>
             </div>
         </div>
-    </div>
+    
+   
 </div>  

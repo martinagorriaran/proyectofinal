@@ -1,15 +1,23 @@
 
 <div>
-    <!--titulo-->
-    <h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px;" class="pt-5 pb-5" id="menu" >MENU</h1>
-    <!-- boton agregar menu-->
-    <div style="display: flex; justify-content:center">
-        <button type="button" class="btn btn-primary" (click)="mostrarDialogo()" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: black;">
-            Agregar Menu
-        </button>
-    </div>
 
-    <div class="row">
+   
+        
+    <div class="mb-5" style="display: flex; justify-content:center; align-items: center;">
+
+        <!--titulo-->
+        <h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px;" class="pt-5 pb-5" id="menu" >MENU</h1>
+        
+        <!-- boton agregar menu-->
+        <button type="button" class="btn btn-primary" (click)="mostrarDialogo()" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 50%; width: 50px; height: 50px; background-color: black; margin-left: 10px;">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+        
+    </div>
+    
+    
+
+    <div class="row px-5">
         <div class="col" *ngFor="let menu of entrada">
             <div class="card" style="width: 18rem;" >
             <!--imagen menu-->
@@ -21,17 +29,26 @@
             </div>
         </div>
     
-        <div style="display: flex; justify-content:center">
+        <div style="display: flex; align-items:center">
     
-        <!-- boton editar -->
-        <button  id="botonAgregarForm" class="btn btn-primary" (click)="mostrarEditar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
-            <i class="fa-solid fa-pen"></i>
-        </button>
+            <!-- boton editar -->
+            <div class="px-5 mt-2">
+                <button  id="botonAgregarForm" class="btn btn-primary" (click)="mostrarEditar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+            </div>
+            
+            
+            <!-- boton eliminar -->
+            <div class="px-5 mt-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="mostrarEliminar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
         
-        <!-- boton eliminar -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="mostrarEliminar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
-            <i class="fa-solid fa-trash"></i>
-        </button>
+        </div>
+
+       
     
     </div>  
 

@@ -1,3 +1,7 @@
+$main-color: black;
+$main-font: Montserrat, sans-serif;
+$content-font: Roboto, sans-serif;
+$h3-font: 'Kaushan Script', cursive;
 /*input*/
 input {
 outline: none;
@@ -65,4 +69,22 @@ font-weight: semibold;
 line-height: inherit;
 transition: 0.3s ease;}
 
+.learn-more-button {
+    padding-bottom: 5em;
+    z-index: 15 !important;
+    a {
+        padding: 0.5em 2em;
+        text-align: center;
+        font-family: $main-font;
+        font-size: 0.875em;
+        color: $main-color;
+        text-transform: uppercase;
+        border: 0.1875em solid $main-color;
+        &:hover {
+            color: #e88382;
+            border-color: #e88382;
+            transition: 3s;
+        }
+    }
+}
     

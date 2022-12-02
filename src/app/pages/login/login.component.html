@@ -1,32 +1,19 @@
 
-<div class="body" style="background-color: grey;">
-    <div class="login">
+
+<div style="background-color: GREY;">
+
+    <div class="login-page" >
+        <div  class="form">
           
-        <div class="margin">
-            <form [formGroup]="datosUsuarios"  >
-
-                <h1 style="text-align: center;" class="myfont">Login</h1>
-
-                <div class="input-group mb-3">
-                    
-                    <input formControlName="username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                
-                    <input formControlName="password" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <br>
-                <div class="boton">
-                    <div class="row">
-                        <button  type="button" class="btn btn-primary col" (click)="iniciaSesion()">Iniciar Sesion</button>
-                        <button  type="button" class="btn btn-primary col" (click)="iniciarSesionConGoogle()">Iniciar Sesion con google</button>
-                    </div>
-                    
-                </div>
-                
-            </form>
+          <form [formGroup]="datosUsuarios"  class="login-form">
+            <input formControlName="username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <input formControlName="password" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            <button (click)="iniciaSesion()">login</button>
+            <button (click)="iniciarSesionConGoogle()">login with google</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
         </div>
-
     </div>
 
-</div> 
+</div>
+
