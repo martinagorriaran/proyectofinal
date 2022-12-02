@@ -1,5 +1,9 @@
 /*carta*/
+$content-font: Roboto, sans-serif;
 
+p{
+    font-family: $content-font;
+}
 
 .card-body{
     background-color: black;

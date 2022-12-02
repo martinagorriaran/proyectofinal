@@ -4,16 +4,16 @@
 <div class="row px-5" >
     <!--menus-->
     
-        <div class="col" *ngFor="let menu of entrada">
-            <div class="card" style="width: 18rem;" >
-                <!--items de los menus-->
-                <img [src]="menu.img" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{menu.comida}}</h5>
-                    <p class="card-text text-center">{{menu.descripcion}}</p>
-                </div>
+    <div class="col" *ngFor="let menu of entrada">
+        <div class="card" style="width: 18rem;" >
+            <!--items de los menus-->
+            <img [src]="menu.img" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{menu.comida}}</h5>
+                <p class="card-text text-center">{{menu.descripcion}}</p>
             </div>
         </div>
+    </div>
     
    
 </div>  

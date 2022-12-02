@@ -162,24 +162,7 @@ body {
 							margin: 2.5em auto;
 							background: $main-color;
 					}
-					.learn-more-button {
-						padding-bottom: 5em;
-						z-index: 15 !important;
-						a {
-							padding: 0.5em 2em;
-							text-align: center;
-							font-family: $main-font;
-							font-size: 0.875em;
-							color: $main-color;
-							text-transform: uppercase;
-							border: 0.1875em solid $main-color;
-							&:hover {
-								color: #e88382;
-								border-color: #e88382;
-								transition: 3s;
-							}
-						}
-					}
+					
 				}
 			}
 			/*imagenes de los banners*/
@@ -266,6 +249,26 @@ body {
 		#banner3:checked ~ nav label:nth-of-type(3) .progressbar-fill,
 		#banner4:checked ~ nav label:nth-of-type(4) .progressbar-fill {
 			animation: progressBarFill 5s linear;
+		}
+	}
+}
+
+
+.learn-more-button {
+	padding-bottom: 5em;
+	z-index: 15 !important;
+	a {
+		padding: 0.5em 2em;
+		text-align: center;
+		font-family: $main-font;
+		font-size: 0.875em;
+		color: $main-color;
+		text-transform: uppercase;
+		border: 0.1875em solid $main-color;
+		&:hover {
+			color: #e88382;
+			border-color: #e88382;
+			transition: 3s;
 		}
 	}
 }
