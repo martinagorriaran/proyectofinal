@@ -1,8 +1,5 @@
 
 <div>
-
-   
-        
     <div class="mb-5" style="display: flex; justify-content:center; align-items: center;">
 
         <!--titulo-->
@@ -11,12 +8,9 @@
         <!-- boton agregar menu-->
         <button type="button" class="btn btn-primary" (click)="mostrarDialogo()" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 50%; width: 50px; height: 50px; background-color: black; margin-left: 10px;">
             <i class="fa-solid fa-plus"></i>
-        </button>
-        
+        </button>     
     </div>
     
-    
-
     <div class="row px-5">
         <div class="col" *ngFor="let menu of entrada">
             <div class="card" style="width: 18rem;" >
@@ -38,20 +32,14 @@
                 </button>
             </div>
             
-            
             <!-- boton eliminar -->
             <div class="px-5 mt-2">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="mostrarEliminar(menu)" style="border-radius: 50%; width: 50px; height: 50px; background-color: black;">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
-        
         </div>
-
-       
-    
     </div>  
-
 </div>
 
 <!-- modal eliminar-->
@@ -91,7 +79,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Descripcion</label>
-                        <input type="password" class="form-control" formControlName="descripcion" id="exampleInputPassword1">
+                        <input type="text" class="form-control" formControlName="descripcion" id="exampleInputPassword1">
                     </div>
 
                     <input id="float-input" type="file" class="p-float-label" pInputText accept=".jpg, .png, .gif" (change)="cargarImagen($event)" formControlName="img">

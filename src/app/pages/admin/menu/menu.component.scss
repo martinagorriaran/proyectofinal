@@ -1,4 +1,6 @@
 /*carta*/
+$content-font: Roboto, sans-serif;
+
 .card-body{
     background-color: black;
 }
@@ -34,5 +36,9 @@ img{
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #0d6efd;
     --bs-btn-disabled-border-color: #0d6efd;
+}
+
+p{
+    font-family: $content-font;
 }
 

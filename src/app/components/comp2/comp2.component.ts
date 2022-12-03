@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { query } from '@angular/animations';
+import { Component, OnInit, Query } from '@angular/core';
+
+
 
 declare var Jquery: any;
 declare var $: any;

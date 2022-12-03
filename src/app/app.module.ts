@@ -15,7 +15,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { Comp6Component } from './components/comp6/comp6.component';
 import { Comp7Component } from './components/comp7/comp7.component';
-import { Comp8Component } from './components/comp8/comp8.component';
+
 import { AdminComponent } from './pages/admin/admin.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CookieService } from 'ngx-cookie-service';
@@ -33,7 +33,6 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     Comp5Component,
     Comp6Component,
     Comp7Component,
-    Comp8Component,
     AdminComponent,
     LoginComponent,
   ],

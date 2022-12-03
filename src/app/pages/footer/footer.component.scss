@@ -1,3 +1,4 @@
+$content-font: Roboto, sans-serif;
 .site-footer
 {
   background-color:#000000;
@@ -66,7 +67,7 @@
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
-  background-color:#33353d
+  background-color:#000000
 }
 .copyright-text
 {
@@ -95,24 +96,26 @@
   padding-left:0;
   margin-bottom:0;
   list-style:none
+  
 }
 .social-icons li
 {
   display:inline-block;
   margin-bottom:4px
+  
 }
 .social-icons li.title
 {
   margin-right:15px;
   text-transform:uppercase;
-  color:#96a2b2;
+  color:#ffffff;
   font-weight:700;
   font-size:13px
 }
 .social-icons a{
-  background-color:#eceeef;
-  color:#818a91;
-  font-size:16px;
+  
+  color:#ffffff;
+  font-size:26px;
   display:inline-block;
   line-height:44px;
   width:44px;
@@ -161,3 +164,12 @@
     font-weight:600
   }
 }
+
+a{
+  text-decoration: none;
+  font-family:$content-font  ;
+}
+p{
+  font-family: $content-font;
+}
+

@@ -1,8 +1,8 @@
 <!--titulo-->
-<h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px;" class="pt-5 pb-5" >SOLICITA MAS INFORMACION</h1>
+<h1 style="font-family:'Koulen', cursive ; text-align: center;font-size: 90px; " class="pt-5 pb-5" >SOLICITA MAS INFORMACION</h1>
 
 <div class="container">
-  <div>
+ 
     <!--formulario-->
     <form [formGroup]="nuevoMensaje">
       <!--fila nombre apellido-->
@@ -24,7 +24,7 @@
         </div>
       </div>
       <!--fila tipo mensaje-->
-      <div class="row">
+      <div class="row" style="margin: 2.5px">
         <label for="Select" class="form-label">Tipo de consulta</label>
         <select style="border-radius:0 ;"  id="Select" class="form-select">
           <option>Foodtruck</option>
@@ -33,16 +33,16 @@
         </select>
       </div>
       <!--fila mensaje-->
-      <div class="row">
-        <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+      <div class="row" style="margin: 2.5px">
+        <label for="exampleFormControlTextarea1" class="form-label" style="padding-top: 12px;">Mensaje</label>
         <textarea style="border-radius:0 ;"  class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="mensaje"></textarea>
       </div>
     </form>
     <!--boton-->
     <div  class="btn-holder"> 
-      <button  type="button" class="btn btn-5 hover-border-11" (click)="agregarMensaje() ">
+      <button  type="button" class="btn btn-5 hover-border-11" (click)="agregarMensaje()" style="margin-bottom: 50px; margin-top:30px;">
         <span>Enviar</span>
       </button>
     </div>
-  </div>
+  
 </div>
