@@ -19,9 +19,11 @@ export class LoginService {
   private coleccionUsuarios: AngularFirestoreCollection<Usuarios>
   cookieValue: string;
   
+  //inyectamos en el constructor los servicios
   constructor(private db:AngularFirestore, private router: Router, private cookie: CookieService, private auth:AngularFireAuth) { 
   }
  
+  //metodo para iniciar sesion con google
   async loginWithGoogle(){
     let referenceProvider = new firebase.auth.GoogleAuthProvider();
     await this.auth.signInWithPopup(referenceProvider);
@@ -43,6 +45,7 @@ export class LoginService {
     )
   }
 
+  //metodo para obtener usuario
   getUser(){
     this.auth.authState.subscribe(
       async user=>{
@@ -51,17 +54,6 @@ export class LoginService {
       }
     )
   }
-
-  logOut(){
-    this.auth.signOut().then(
-      ()=>{
-        this.cookie.delete("idToken");
-      }
-    )
-  }
-
-
-
 
   //metodo para obtener usuarios
   getUsuarios(){

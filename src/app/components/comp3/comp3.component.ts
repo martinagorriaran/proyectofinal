@@ -9,8 +9,10 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class Comp3Component implements OnInit {
 
+  //enviamos propiedades desde el componente padre al hijo con el input
   @Input() entrada:Menu[]
 
+  //inyectamos dentro del constructor los servicios
   constructor(private servicioMenus:MenuService) { }
 
   ngOnInit(): void {

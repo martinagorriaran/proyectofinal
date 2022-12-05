@@ -1,3 +1,5 @@
+$content-font: Roboto, sans-serif;
+$main-font: Montserrat, sans-serif; 
 
 .margin{
   margin-left: 30px;
@@ -13,7 +15,17 @@
 }
 
 h1{
+ 
+  font-family: 'LemonJelly';
   font-size: 50px;
+  font-weight: 700;
+  
+}
+
+h5{
+  margin-bottom: 15PX;
+  
+  
 }
 
 .boton{

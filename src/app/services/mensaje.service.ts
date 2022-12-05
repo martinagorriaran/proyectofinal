@@ -10,19 +10,22 @@ import { async } from '@firebase/util';
 })
 export class MensajeService {
 
+  //declaracion de variables
   private collectionMensajes:AngularFirestoreCollection<Mensaje>
 
+  //inyectamos en el constructor los servicios
   constructor(private db:AngularFirestore) {
     this.collectionMensajes = db.collection('mensajes')
   }
 
+  //metodo para obtener mensajes
   getMensajes(){
     return this.collectionMensajes.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data())))
   }
 
 
-   
-createMensaje(nuevoMensaje:Mensaje){
+  //metodo para crear mensaje 
+  createMensaje(nuevoMensaje:Mensaje){
 
     return new Promise(async (resolve,reject)=>{
       try{
@@ -31,7 +34,7 @@ createMensaje(nuevoMensaje:Mensaje){
         const answer = await this.collectionMensajes.doc().set(nuevoMensaje);
         resolve(answer)
       }
-  
+
       catch(error){
         reject(error)
       }

@@ -10,6 +10,7 @@ export class MenuService {
   //declaracion de variables
   private collectionMenu:AngularFirestoreCollection<Menu>
 
+  //inyectamos los servicios en el constructor
   constructor(private db:AngularFirestore) {
     this.collectionMenu = db.collection('menu')
   }

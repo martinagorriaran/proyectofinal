@@ -45,11 +45,7 @@ export class LoginComponent implements OnInit {
   iniciaSesion(){
     this.servicioUsuarios.login(this.datosUsuarios,this.colUsuarios)
   }
-  CerrarSesion(){
-    this.login.logOut()
-    this.router.navigateByUrl("/")
-    this.ngOnInit()
-  }
+  
 
 
 
@@ -58,10 +54,7 @@ export class LoginComponent implements OnInit {
     this.google.loginWithGoogle()
   }
 
-  cerrarSesionConGoogle(){
-    this.google.logOut()
-  }
-
+ 
 }
 
 

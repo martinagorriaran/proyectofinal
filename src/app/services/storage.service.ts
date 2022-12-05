@@ -35,7 +35,7 @@ export class StorageService {
     }
   
   obtenerUrlImagen(respuesta:UploadResult){
-      return getDownloadURL (respuesta.ref)
+    return getDownloadURL (respuesta.ref)
   }
   
   eliminarImagen(urlmagen:string){

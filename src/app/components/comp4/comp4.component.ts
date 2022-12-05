@@ -35,12 +35,15 @@ export class Comp4Component implements OnInit {
         telefono : this.nuevoMensaje.value.telefono!,
         idMensaje : ""
       }
-  
+      
+      //si servicio mensajes crea un nuevo mensaje
       this.servicioMensajes.createMensaje(nuevoMensaje).then(mensaje=>{
+        //y envia una alerta
         alert("Mensaje enviado con exito")
       })
-  
+      //si ocurre un error no crea un nuevo mensaje
       .catch(error=>{
+        //y envia una alerta
         alert("Ocurrio un error\nError: "+error)
       })
     }
